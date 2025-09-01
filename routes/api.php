@@ -16,3 +16,12 @@ Route::get('/welcome', function () {
         'tip' => "Have a nice day 🍀"
     ]);
 });
+
+
+Route::post('/welcome', function (Request $request) {
+    return response()->json([
+        'message'   => 'This is a POST request',
+         'data'     => $request->all(),
+         'name'     => $request->name
+    ]);
+});
